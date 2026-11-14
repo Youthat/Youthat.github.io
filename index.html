@@ -1,145 +1,241 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>师伟越 · 计算数学 / CAD-CAE</title>
-<meta name="description" content="师伟越 —— 数学专业本科生，方向：计算数学 / CAD-CAE 仿真、样条插值、有限元。">
-<style>
-  :root {
-    --bg: #ffffff;
-    --fg: #1a1a1a;
-    --muted: #6b7280;
-    --line: #e5e7eb;
-    --accent: #1f4e79;
-    --code-bg: #f3f4f6;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>师伟越 | Shi Weiyue · 数学</title>
+  <meta name="description" content="师伟越，广西大学数学与应用数学专业 2023 级本科生，2026 年推免至大连理工大学计算数学（CAGD）方向。研究兴趣：计算机辅助几何设计、样条曲线与曲面、数值计算。">
+  <meta name="author" content="师伟越">
+  <meta name="theme-color" content="#f3f1ec">
+  <link rel="canonical" href="https://youthat.github.io/">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://youthat.github.io/">
+  <meta property="og:site_name" content="师伟越 | Shi Weiyue">
+  <meta property="og:title" content="师伟越 | Shi Weiyue · 数学">
+  <meta property="og:description" content="广西大学数学与应用数学 · 2026 推免至大连理工大学计算数学（CAGD）· 样条曲线与曲面 · 数值计算">
+  <meta property="og:image" content="https://youthat.github.io/assets/img/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="师伟越 | Shi Weiyue · 数学">
+  <meta name="twitter:description" content="广西大学数学与应用数学 · 计算数学（CAGD）· 2026 推免至大连理工大学">
+  <meta name="twitter:image" content="https://youthat.github.io/assets/img/og-cover.png">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/img/og-cover.png">
+  <link rel="preload" as="image" href="assets/img/portrait.jpg" imagesrcset="assets/img/portrait-sm.jpg 343w, assets/img/portrait.jpg 800w" imagesizes="(max-width: 860px) 160px, 200px">
+  <script>
+    document.documentElement.classList.add('js');
+  </script>
+  <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "师伟越",
+    "alternateName": "Shi Weiyue",
+    "url": "https://youthat.github.io/",
+    "image": "https://youthat.github.io/assets/img/portrait.jpg",
+    "email": "mailto:603164453@qq.com",
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "广西大学" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "广西大学" },
+    "knowsAbout": ["计算机辅助几何设计", "样条曲线", "数值计算", "代数编码"]
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #111315;
-      --fg: #e8e8e8;
-      --muted: #9aa0a6;
-      --line: #2a2e33;
-      --accent: #7ab3e0;
-      --code-bg: #1c2126;
-    }
-  }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--fg);
-    font-family: -apple-system, "Segoe UI", "Microsoft YaHei", "PingFang SC",
-                 "Hiragino Sans GB", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.75;
-  }
-  main {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 72px 24px 96px;
-  }
-  header { padding-bottom: 28px; border-bottom: 1px solid var(--line); }
-  h1 {
-    margin: 0 0 10px;
-    font-size: 30px;
-    font-weight: 700;
-    letter-spacing: .5px;
-  }
-  .sub { margin: 0; color: var(--muted); font-size: 15px; }
-  h2 {
-    margin: 44px 0 14px;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    color: var(--accent);
-    text-transform: uppercase;
-  }
-  p { margin: 10px 0; }
-  ul { margin: 10px 0; padding-left: 20px; }
-  li { margin: 6px 0; }
-  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
-  a:hover { border-bottom-color: var(--accent); }
-  code {
-    font-family: Consolas, "Cascadia Mono", "SF Mono", Menlo, monospace;
-    font-size: 13.5px;
-    background: var(--code-bg);
-    padding: 2px 6px;
-    border-radius: 4px;
-  }
-  .note {
-    margin-top: 16px;
-    padding: 14px 16px;
-    background: var(--code-bg);
-    border-left: 3px solid var(--accent);
-    border-radius: 0 6px 6px 0;
-    font-size: 14.5px;
-    color: var(--muted);
-  }
-  footer {
-    margin-top: 64px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-    color: var(--muted);
-    font-size: 13px;
-  }
-  @media (max-width: 520px) {
-    main { padding: 44px 20px 72px; }
-    h1 { font-size: 25px; }
-  }
-</style>
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<main>
 
-  <header>
-    <h1>师伟越</h1>
-    <p class="sub">数学 → 计算数学 → CAD / CAE 仿真</p>
-  </header>
+  <a class="skip-link" href="#main">跳到主要内容</a>
 
-  <h2>关于</h2>
-  <p>
-    数学专业本科生，正在往<strong>计算数学 / CAD-CAE 仿真</strong>方向走。
-    比起调库，更想搞清楚几何和数值求解背后的那套东西是怎么算出来的。
-  </p>
-  <ul>
-    <li><strong>去向</strong>：广西大学 · 数学与应用数学 → 大连理工大学 · 计算数学（2027 级）</li>
-    <li><strong>关注</strong>：样条插值（B 样条 / 三次样条）、有限元、PDE 数值解</li>
-    <li><strong>工具</strong>：C / C++、Visual Studio、clang-tidy、AddressSanitizer</li>
-  </ul>
+  <div class="container">
 
-  <h2>正在学</h2>
-  <p>这条路线不跳步，按顺序把地基打实：</p>
-  <ul>
-    <li><code>C</code> 语法 → 指针 / 动态内存 / 文件 <em>（进行中）</em></li>
-    <li><code>C++</code> 类与对象 → STL → 模板</li>
-    <li><code>Eigen</code> 稀疏矩阵（<code>Triplet</code> → <code>SparseMatrix</code>）</li>
-    <li><code>1D/2D 热方程</code> 有限差分 → 有限元</li>
-  </ul>
+    <!-- ============ 顶部导航 ============ -->
+    <nav class="top-nav" aria-label="主导航">
+      <a class="nav-name" href="#top">师伟越 <span>Shi Weiyue</span></a>
+      <div class="nav-links">
+        <a href="#about">关于</a>
+        <a href="#publications">论文</a>
+        <a href="#projects">项目</a>
+        <a href="#experience">经历</a>
+        <a href="#notes">随笔</a>
+        <a href="#contact">联系</a>
+      </div>
+    </nav>
 
-  <h2>项目</h2>
-  <ul>
-    <li>
-      <strong>swy-code-practice</strong> —— C 语言练习仓库（私有，暂不公开）。<br>
-      配 <code>clang-tidy</code> 静态检查 + <code>AddressSanitizer</code> 内存检查，
-      编译零警告（<code>/W4</code>）。每段代码都先编译、再跑、再看边界。
-    </li>
-  </ul>
-  <div class="note">
-    项目还在积累中。接下来会出现：矩阵库、动态数组、1D 热方程有限差分求解器。
+    <main id="main">
+
+      <!-- ============ 关于 ============ -->
+      <section class="card hero reveal" id="about">
+        <a class="anchor" id="top" aria-hidden="true"></a>
+        <div class="hero-text">
+          <p class="eyebrow">COMPUTATIONAL MATHEMATICS · CAGD</p>
+          <h1>师伟越<span class="h1-en">Shi Weiyue</span></h1>
+          <p class="identity">
+            广西大学 · 数学与应用数学 · 2023 级本科生<br>
+            2026 年推免至大连理工大学 · 计算数学（CAGD）学术型硕士
+          </p>
+          <p class="about-line">
+            我关心几何对象如何被表示与计算：曲线、曲面的构造与性质，以及数值方法在几何建模中的稳定性与精度。
+            本科阶段我在代数编码方向完成了一项国家级大创与一篇第一作者论文；现在，我把重心转向计算数学（CAGD，
+            计算机辅助几何设计），并正在补上 C / C++、Eigen 与有限元这些把数学落到代码里的工程基础。
+          </p>
+          <p class="about-line about-line--soft">
+            比起直接调用现成的库，我更想弄清楚几何与数值求解背后的那套东西，究竟是怎么算出来的。
+          </p>
+          <div class="hero-facts" aria-label="概览">
+            <span>GPA 4.421 / 5.0</span>
+            <span>专业排名 1 / 128</span>
+            <span>第一作者论文 1 篇</span>
+            <span>竞赛获奖 9 项</span>
+          </div>
+          <div class="links">
+            <a class="pill-link" href="mailto:603164453@qq.com">Email</a>
+            <a class="pill-link" href="https://github.com/Youthat" target="_blank" rel="noopener">GitHub</a>
+            <a class="pill-link" href="https://gitee.com/return-to-the-radiance" target="_blank" rel="noopener">Gitee</a>
+            <a class="pill-link" href="assets/pdf/shiweiyue-resume.pdf" download>简历 PDF</a>
+          </div>
+        </div>
+        <div class="profile-photo-wrap">
+          <img class="profile-photo" src="assets/img/portrait.jpg"
+               srcset="assets/img/portrait-sm.jpg 343w, assets/img/portrait.jpg 800w"
+               sizes="(max-width: 860px) 160px, 200px"
+               alt="师伟越的照片" width="800" height="1120" decoding="async" fetchpriority="high">
+        </div>
+      </section>
+
+      <!-- ============ 论文 ============ -->
+      <section class="card reveal" id="publications">
+        <h2>Selected Publications</h2>
+        <div class="empty-state">
+          <p class="empty-kicker">IN PREPARATION</p>
+          <p class="empty-title">论文整理中</p>
+          <p class="empty-text">计算数学方向的新论文、预印本与笔记会陆续更新在这里。本科阶段的代数编码工作，暂放在下方「经历」中作为研究训练记录。</p>
+        </div>
+      </section>
+
+      <!-- ============ 项目 ============ -->
+      <section class="card reveal" id="projects">
+        <h2>Projects</h2>
+        <div class="empty-state">
+          <p class="empty-kicker">IN PROGRESS</p>
+          <p class="empty-title">项目整理中</p>
+          <p class="empty-text">正在把 C / C++ 数值练习与 CAGD 的小工具整理成可展示的项目，之后会在这里与 GitHub 同步更新。</p>
+        </div>
+      </section>
+
+      <!-- ============ 经历 ============ -->
+      <section class="card reveal" id="experience">
+        <h2>Education &amp; Experience</h2>
+
+        <div class="experience-grid">
+          <div class="info-panel">
+            <h3>教育经历</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <span class="school-mark">DUT</span>
+                <div>
+                  <p class="timeline-time">2027 —</p>
+                  <p class="timeline-title">大连理工大学 · 计算数学（CAGD）· 学术型硕士</p>
+                  <p class="timeline-desc">2026 年推免录取</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="school-mark">GXU</span>
+                <div>
+                  <p class="timeline-time">2023.09 — 2027.06</p>
+                  <p class="timeline-title">广西大学 · 数学与应用数学 · 本科</p>
+                  <p class="timeline-desc">GPA 4.421 / 5.0 · 专业排名 1 / 128 · 核心课程均分 97.1</p>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="h3-gap">本科科研</h3>
+            <ul class="research-list">
+              <li><span class="r-label">大创</span>国家级大学生创新训练项目 · 负责人 · 双二面体图上的子群完美码（2025 — 2026，合格结题）</li>
+              <li><span class="r-label">论文</span>第一作者 · Research on the Existence Criterion for Subgroup Perfect Codes in Bi-Cayley Graphs（2026）</li>
+              <li><span class="r-label">专利</span>发明型专利 · 一种使用神经网络生成图像的方法（2024 申请，实质审查）</li>
+            </ul>
+
+            <h3 class="h3-gap">正在补的工程基础</h3>
+            <p class="learning-line">C → C++ → Eigen 稀疏矩阵 → 1D / 2D 热方程（有限差分 → 有限元）</p>
+            <div class="chips">
+              <span>C / C++</span><span>Visual Studio</span><span>clang-tidy</span><span>AddressSanitizer</span><span>/W4 零警告</span>
+            </div>
+          </div>
+
+          <div class="info-panel">
+            <h3>竞赛与荣誉</h3>
+            <div class="award-list">
+              <span class="award-chip">第十六届全国大学生数学竞赛（数学类决赛）· 二等奖</span>
+              <span class="award-chip">美国大学生数学建模竞赛（MCM / ICM）· H 奖</span>
+              <span class="award-chip">第十七届全国大学生数学竞赛 · 广西赛区一等奖</span>
+              <span class="award-chip">第十六届全国大学生数学竞赛 · 广西赛区一等奖</span>
+              <span class="award-chip">全国大学生数学建模竞赛 · 广西赛区三等奖 × 2</span>
+              <span class="award-chip">全国大学生英语竞赛 · 广西赛区三等奖</span>
+              <span class="award-chip">第三届全国大学生职业规划大赛 · 院级一等奖</span>
+              <span class="award-chip">中国国际大学生创新创业大赛 · 校赛二等奖</span>
+              <span class="award-chip">自治区人民政府奖学金</span>
+              <span class="award-chip">校级优秀学生（学习优秀类一等 / 技能竞赛类）</span>
+            </div>
+
+            <h3 class="h3-gap">技能与语言</h3>
+            <div class="award-list">
+              <span class="award-chip">Python</span>
+              <span class="award-chip">MATLAB</span>
+              <span class="award-chip">Microsoft PL-900</span>
+              <span class="award-chip">CET-6 525</span>
+              <span class="award-chip">CET-4 587</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 随笔 ============ -->
+      <section class="card reveal" id="notes">
+        <h2>Fragments</h2>
+        <p class="section-note">一些与数学无关的旧句子，来自 2020 — 2027 年的私人写作。它们不解释什么，只是偶尔提醒我：人的尺度不止一种。</p>
+        <div class="quote-grid">
+          <figure class="quote-card">
+            <blockquote>“朝着春天走去，别烂在过去和梦里。”</blockquote>
+          </figure>
+          <figure class="quote-card">
+            <blockquote>“人们永远无法预估某个瞬间的价值，直到它成为回忆。”</blockquote>
+          </figure>
+          <figure class="quote-card">
+            <blockquote>“人不能只有秩序和理性，也要有混乱。”</blockquote>
+          </figure>
+          <figure class="quote-card">
+            <blockquote>“夕阳灌醉了云朵，影子向玫瑰献忱，去吻一吻自由的风吧。”</blockquote>
+          </figure>
+        </div>
+        <p class="section-foot">— 旧作摘句</p>
+      </section>
+
+      <!-- ============ 联系 ============ -->
+      <section class="card contact reveal" id="contact">
+        <h2>Contact</h2>
+        <p class="contact-lead">如果你对 CAGD、曲线曲面、数值计算，或者数学与工程的交叉感兴趣，欢迎写信与我交流。</p>
+        <div class="contact-links">
+          <a class="btn btn--primary" href="mailto:603164453@qq.com">603164453@qq.com</a>
+          <button class="btn btn--ghost copy-btn" type="button" data-copy="603164453@qq.com">复制邮箱</button>
+          <a class="btn btn--ghost" href="https://github.com/Youthat" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn--ghost" href="https://gitee.com/return-to-the-radiance" target="_blank" rel="noopener">Gitee</a>
+          <a class="btn btn--ghost" href="assets/pdf/shiweiyue-resume.pdf" download>简历 PDF</a>
+        </div>
+        <p class="contact-meta">广西 · 南宁 &nbsp;·&nbsp; 广西大学数学学院</p>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 师伟越 <span>·</span> 数学与应用数学</p>
+      <p class="footer-en">SHI WEIYUE · MATHEMATICS</p>
+    </footer>
   </div>
 
-  <h2>联系</h2>
-  <ul>
-    <li>Gitee：<a href="https://gitee.com/return-to-the-radiance">@return-to-the-radiance</a></li>
-    <li>GitHub：<a href="https://github.com/Youthat">@Youthat</a></li>
-  </ul>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <footer>
-    © 2026 师伟越 · 用工科的方式学数学
-  </footer>
-
-</main>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
+
