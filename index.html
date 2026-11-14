@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>师伟越 · 计算数学 / CAD-CAE</title>
+<meta name="description" content="师伟越 —— 数学专业本科生，方向：计算数学 / CAD-CAE 仿真、样条插值、有限元。">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --accent: #1f4e79;
+    --code-bg: #f3f4f6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111315;
+      --fg: #e8e8e8;
+      --muted: #9aa0a6;
+      --line: #2a2e33;
+      --accent: #7ab3e0;
+      --code-bg: #1c2126;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, "Segoe UI", "Microsoft YaHei", "PingFang SC",
+                 "Hiragino Sans GB", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 72px 24px 96px;
+  }
+  header { padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+  h1 {
+    margin: 0 0 10px;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: .5px;
+  }
+  .sub { margin: 0; color: var(--muted); font-size: 15px; }
+  h2 {
+    margin: 44px 0 14px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  p { margin: 10px 0; }
+  ul { margin: 10px 0; padding-left: 20px; }
+  li { margin: 6px 0; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+  a:hover { border-bottom-color: var(--accent); }
+  code {
+    font-family: Consolas, "Cascadia Mono", "SF Mono", Menlo, monospace;
+    font-size: 13.5px;
+    background: var(--code-bg);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .note {
+    margin-top: 16px;
+    padding: 14px 16px;
+    background: var(--code-bg);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    font-size: 14.5px;
+    color: var(--muted);
+  }
+  footer {
+    margin-top: 64px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 13px;
+  }
+  @media (max-width: 520px) {
+    main { padding: 44px 20px 72px; }
+    h1 { font-size: 25px; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <h1>师伟越</h1>
+    <p class="sub">数学 → 计算数学 → CAD / CAE 仿真</p>
+  </header>
+
+  <h2>关于</h2>
+  <p>
+    数学专业本科生，正在往<strong>计算数学 / CAD-CAE 仿真</strong>方向走。
+    比起调库，更想搞清楚几何和数值求解背后的那套东西是怎么算出来的。
+  </p>
+  <ul>
+    <li><strong>去向</strong>：广西大学 · 数学与应用数学 → 大连理工大学 · 计算数学（2027 级）</li>
+    <li><strong>关注</strong>：样条插值（B 样条 / 三次样条）、有限元、PDE 数值解</li>
+    <li><strong>工具</strong>：C / C++、Visual Studio、clang-tidy、AddressSanitizer</li>
+  </ul>
+
+  <h2>正在学</h2>
+  <p>这条路线不跳步，按顺序把地基打实：</p>
+  <ul>
+    <li><code>C</code> 语法 → 指针 / 动态内存 / 文件 <em>（进行中）</em></li>
+    <li><code>C++</code> 类与对象 → STL → 模板</li>
+    <li><code>Eigen</code> 稀疏矩阵（<code>Triplet</code> → <code>SparseMatrix</code>）</li>
+    <li><code>1D/2D 热方程</code> 有限差分 → 有限元</li>
+  </ul>
+
+  <h2>项目</h2>
+  <ul>
+    <li>
+      <strong>swy-code-practice</strong> —— C 语言练习仓库。<br>
+      配 <code>clang-tidy</code> 静态检查 + <code>AddressSanitizer</code> 内存检查，
+      编译零警告（<code>/W4</code>）。每段代码都先编译、再跑、再看边界。
+      <br><a href="https://gitee.com/return-to-the-radiance/swy-code-practice">查看仓库 →</a>
+    </li>
+  </ul>
+  <div class="note">
+    项目还在积累中。接下来会出现：矩阵库、动态数组、1D 热方程有限差分求解器。
+  </div>
+
+  <h2>联系</h2>
+  <ul>
+    <li>Gitee：<a href="https://gitee.com/return-to-the-radiance">@return-to-the-radiance</a></li>
+    <li>GitHub：<a href="https://github.com/Youthat">@Youthat</a></li>
+  </ul>
+
+  <footer>
+    © 2026 师伟越 · 用工科的方式学数学
+  </footer>
+
+</main>
+</body>
+</html>
