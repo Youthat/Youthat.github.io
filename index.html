@@ -291,44 +291,6 @@
       line-height: 1.5;
     }
 
-    .publication-card {
-      display: grid;
-      grid-template-columns: 250px 1fr;
-      gap: 22px;
-      align-items: center;
-      padding: 12px 0;
-      border-bottom: 1px solid #f0f0f2;
-    }
-
-    .publication-card:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .publication-cover-wrap {
-      width: 250px;
-      height: 150px;
-      border-radius: 18px;
-      background: #fff;
-      border: 1px solid #e6e8ec;
-      box-shadow: var(--soft-shadow);
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      align-self: center;
-    }
-
-    .publication-cover {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-      display: block;
-      padding: 8px;
-      background: #fff;
-    }
-
     .project-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -586,16 +548,6 @@
         height: 155px;
       }
 
-      .publication-card {
-        grid-template-columns: 1fr;
-        gap: 14px;
-        align-items: start;
-      }
-
-      .publication-cover-wrap {
-        width: 100%;
-        height: 210px;
-      }
     }
 
     @media (max-width: 560px) {
@@ -620,10 +572,6 @@
         font-size: 14px;
         padding: 5px 11px;
       }
-
-      .publication-cover-wrap {
-        height: 190px;
-      }
     }
   </style>
 </head>
@@ -633,7 +581,6 @@
     <nav class="top-nav">
       <div class="nav-name">师伟越（Shi Weiyue）</div>
       <div class="nav-links">
-        <a href="#publications">Publications</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#notes">Notes</a>
@@ -650,7 +597,7 @@
         </p>
 
         <p class="about-line">
-          我是广西大学数学与应用数学专业 2023 级本科生，2026 年推免至大连理工大学，将在计算数学（CAGD，计算机辅助几何设计）方向攻读学术型硕士。本科阶段我在代数编码方向完成了一项国家级大创与一篇第一作者论文；现在正把重心转向计算数学，并补上 C / C++、Eigen 与有限元的工程基础。
+          我是广西大学数学与应用数学专业 2023 级本科生，2026 年推免至大连理工大学，将在计算数学（CAGD，计算机辅助几何设计）方向攻读学术型硕士。本科阶段我在代数编码方向完成了一项国家级大创；现在正把重心转向计算数学，并补上 C / C++、Eigen 与有限元的工程基础。
         </p>
 
         <p class="about-line">
@@ -668,10 +615,6 @@
       <div class="profile-photo-wrap">
         <img src="assets/profile.jpg" alt="师伟越" class="profile-photo" width="800" height="1120" decoding="async">
       </div>
-    </section>
-
-    <section class="card" id="publications">
-      <h2>Selected Publications</h2>
     </section>
 
     <section class="card" id="projects">
